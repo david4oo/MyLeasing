@@ -44,6 +44,7 @@ namespace MyLeasing.Web
                 cfg.Password.RequireLowercase = false;
                 cfg.Password.RequireNonAlphanumeric = false;
                 cfg.Password.RequireUppercase = false;
+
             }).AddEntityFrameworkStores<DataContext>();
 
 

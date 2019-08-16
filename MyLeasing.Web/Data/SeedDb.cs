@@ -23,9 +23,9 @@ namespace MyLeasing.Web.Data
         {
             await _context.Database.EnsureCreatedAsync();
             await CheckRoles();
-            var manager = await CheckUserAsync("1010", "Walter", "Araujo", "waraujo095@gmail.com", "350 634 2747", "Calle Luna Calle Sol", "Manager");
-            var owner = await CheckUserAsync("2020", "Walter", "Araujo", "walter-40295@hotmail.com", "350 634 2747", "Calle Luna Calle Sol", "Owner");
-            var lessee = await CheckUserAsync("3030", "Walter", "Araujo", "david.4029@hotmail.com", "350 634 2747", "Calle Luna Calle Sol", "Lessee");
+            var manager = await CheckUserAsync("1010", "Walter", "Araujo", "waraujo095@gmail.com", "316 669 9037", "Calle Luna Calle Sol", "Manager");
+            var owner = await CheckUserAsync("2020", "Walter", "Araujo", "walter-4029@hotmail.com", "316 669 9037", "Calle Luna Calle Sol", "Owner");
+            var lessee = await CheckUserAsync("3030", "Walter", "Araujo", "walteraraujo206571@correo.itm.edu.co", "316 669 9037", "Calle Luna Calle Sol", "Lessee");
             await CheckPropertyTypesAsync();
             await CheckManagerAsync(manager);
             await CheckOwnersAsync(owner);
@@ -50,14 +50,14 @@ namespace MyLeasing.Web.Data
                     Owner = owner,
                     Price = 800000M,
                     Property = property,
-                    Remarks = "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
-                    " Mauris nec iaculis ex. Nullam gravida nunc eleifend, placerat tellus a, eleifend metus. " +
-                    "Phasellus id suscipit magna. Orci varius natoque penatibus et magnis dis parturient montes, " +
-                    "nascetur ridiculus mus. Nullam volutpat ultrices ex, sed cursus sem tincidunt ut. " +
-                    "Nullam metus lorem, " + "convallis quis dignissim quis, porttitor quis leo. " +
-                    "In hac habitasse platea dictumst. Duis pharetra sed arcu ac viverra. Proin dapibus lobortis commodo." +
-                    " Vivamus non commodo est, ac vehicula augue. Nam enim felis, rutrum in tortor sit amet, " +
-                    "efficitur hendrerit augue. Cras pellentesque nisl eu maximus tempor. Curabitur eu efficitur metus. " +
+                    Remarks = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec iaculis ex. " +
+                    "Nullam gravida nunc eleifend, placerat tellus a, eleifend metus. Phasellus id suscipit magna. " +
+                    "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." +
+                    " Nullam volutpat ultrices ex, sed cursus sem tincidunt ut. Nullam metus lorem, " +
+                    "convallis quis dignissim quis, porttitor quis leo. In hac habitasse platea dictumst. " +
+                    "Duis pharetra sed arcu ac viverra. Proin dapibus lobortis commodo. Vivamus non commodo est, " +
+                    "ac vehicula augue. Nam enim felis, rutrum in tortor sit amet, efficitur hendrerit augue." +
+                    " Cras pellentesque nisl eu maximus tempor. Curabitur eu efficitur metus. " +
                     "Sed ultricies urna et auctor commodo."
                 });
 
@@ -74,13 +74,7 @@ namespace MyLeasing.Web.Data
             }
         }
 
-        private async Task<User> CheckUserAsync(string document, 
-            string firstName, 
-            string lastName, 
-            string email, 
-            string phone, 
-            string address, 
-            string role)
+        private async Task<User> CheckUserAsync(string document, string firstName, string lastName, string email, string phone, string address, string role)
         {
             var user = await _userHelper.GetUserByEmailAsync(email);
             if (user == null)
