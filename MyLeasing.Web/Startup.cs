@@ -61,6 +61,7 @@ namespace MyLeasing.Web
             services.AddScoped<IUserHelper, UserHelper>();
             services.AddScoped<IComboHelper, ComboHelper>();
             services.AddScoped<IConverterHelper, ConverterHelper>();
+            services.AddScoped<IImageHelper, ImageHelper>();
 
 
 
@@ -92,6 +93,14 @@ namespace MyLeasing.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+
+
+
+
+
+
+
         }
     }
 }
